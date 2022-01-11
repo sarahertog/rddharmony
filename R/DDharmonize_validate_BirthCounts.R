@@ -1,16 +1,23 @@
+#' @title
 #' DDharmonize_validate_BirthCounts
 #'
+#' @description
 #' This script implements a workflow for births counts from vr or census extracting data from Demodata, harmonizing age groups,
 #' identifying full series, selecting preferred series, validating totals by age and, eventually
 #' including key fields in the function output.
 #'
-#' @param locid location id
+#' @details
+#' See the \href{https://shelmith-kariuki.github.io/rddharmony/articles/DDharmonize_validate_BirthCounts.html}{DDharmonize_validate_BirthCounts} vignette for more details about this function.
+#'
+#' @param locid Location id
 #' @param times The period of the data to be extracted. You can extract one year data e.g times = 2020 or a longer period of time e.g times = c(1950, 2020).
 #' @param process The process through which the data was obtained from various sources i.e either via census or vital registrations (vr). By default, the function pulls data obtained through both of these processes.
-#' @param return_unique_ref_period TRUE
+#' @param return_unique_ref_period TRUE / FALSE. Specifies whether the data to be returned should contain one unique id (return_unique_ref_period == TRUE) or several ids (return_unique_ref_period == FALSE) per time label.
+#' ids are a unique identifier for each unique set of records based on `LocID`, `LocName`, `DataProcess`, `ReferencePeriod`, `DataSourceName`, `StatisticalConceptName`, `DataTypeName` and `DataReliabilityName`.
+#' The definitions of these variables are provided later in this article.
 #' @param DataSourceShortName NULL
 #' @param DataSourceYear NULL
-#' @param retainKeys FALSE
+#' @param retainKeys  TRUE / FALSE. Specifies whether only a few (retainKeys == FALSE) or all (retainKeys == TRUE) variables should be retained in the output.
 #' @param server "https://popdiv.dfs.un.org/DemoData/api/"
 #'
 #' @import dplyr
@@ -25,6 +32,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' sweden_df <- DDharmonize_validate_BirthCounts(752,
 #'                                               c(1950,2020),
 #'                                               process = c("census", "vr"),
@@ -33,6 +41,7 @@
 #'                                               DataSourceYear = NULL,
 #'                                               retainKeys = FALSE,
 #'                                               server = "https://popdiv.dfs.un.org/DemoData/api/")
+#'}
 
 
 DDharmonize_validate_BirthCounts <- function(locid,
@@ -629,7 +638,7 @@ DDharmonize_validate_BirthCounts <- function(locid,
 
     if (retainKeys == FALSE) {
       out_all_appended <- out_all_appended %>%
-        select(id, LocID, LocName, IndicatorID, IndicatorName, TimeLabel, TimeMid, TimeEnd, DataProcessType, DataSourceName, StatisticalConceptName,
+        select(id, LocID, LocName, IndicatorID, IndicatorName, TimeStart, TimeLabel, TimeMid, TimeEnd, DataProcessType, DataSourceName, StatisticalConceptName,
                DataTypeName, DataReliabilityName, five_year, abridged, complete, non_standard, SexID, AgeStart, AgeEnd,
                AgeLabel, AgeSpan, AgeSort, DataValue, note)
     }

@@ -16,4 +16,4 @@ data_abr
 \description{
 This dataset has been used to show how DDharmonize_AbridgedAndComplete() works.
 }
-\keyword{datasets}
+\keyword{internal}

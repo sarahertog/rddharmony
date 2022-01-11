@@ -12,12 +12,17 @@ DDharmonize_Vitals5(indata, type = c("births", "deaths"))
 \item{type}{births / deaths}
 }
 \value{
-A data frame that contains counts for five-year age groups and closed by an open age group
+A data frame that contains harmonized counts for five-year age groups and closed by an open age group.
 }
 \description{
-This wrapper takes five-year vital counts from census and registers from DemoData and standardizes/harmonizes them.
+This wrapper takes five-year vital counts from census and registers from the UNDP database and standardizes/harmonizes them.
+}
+\details{
+See the \href{https://shelmith-kariuki.github.io/rddharmony/articles/DDharmonize_5YearCounts.html}{"Harmonizing five-year counts" vignette} for more details about this function.
 }
 \examples{
+\dontrun{
 df <- vitals5_df
 df <- DDharmonize_Vitals5(df, type = "births")
+}
 }

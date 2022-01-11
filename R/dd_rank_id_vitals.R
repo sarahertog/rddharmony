@@ -1,20 +1,26 @@
+#' @title
 #' dd_rank_id_vitals
 #'
-#' Ranking id; For each country- year, we rank the available ids for counts of vital events
+#' @description
+#' Ranking id; For each country- year, we rank the available ids for counts of vital events.
+#'
+#' @details
+#' See Part 3 of the \href{https://shelmith-kariuki.github.io/rddharmony/articles/Harmonization_Workflow.html}{Harmonization Workflow article} for details about this function.
 #'
 #' @param indata The data to be harmonised
 #'
 #' @import dplyr
 #' @importFrom magrittr %>%
 #'
-#' @return A dataset with only one id per country and year
+#' @return A dataset with only one id per country and year.
 #'
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' df <- vitals_std_valid_sample2
 #' df <- dd_rank_id_vitals(df)
-
+#' }
 
 dd_rank_id_vitals <- function(indata){
 
@@ -41,9 +47,11 @@ dd_rank_id_vitals <- function(indata){
       dplyr::filter(DataStatusSort == min(DataStatusSort)) %>%
 
       # Third: Rank by DataProcess
+      # Shel: Here, we are preferring Census over Vital Registrations data
       dplyr::filter(DataProcessSort == min(DataProcessSort)) %>%
 
       # Fourth: Rank by DataProcessType
+      # Shel: Here, we are preferring Census over Register
       dplyr::filter(DataProcessTypeSort == min(DataProcessTypeSort)) %>%
 
       # Fifth: Prefer better DataReliability

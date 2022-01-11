@@ -16,4 +16,4 @@ oag_multiple_df
 \description{
 This dataset has been used to show how dd_oag_multiple() works.
 }
-\keyword{datasets}
+\keyword{internal}

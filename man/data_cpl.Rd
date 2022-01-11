@@ -6,6 +6,7 @@
 \title{data_cpl}
 \format{
 A data frame with 11 rows and 12 variables:
+
 \describe{
 ...
 }
@@ -16,4 +17,4 @@ data_cpl
 \description{
 This dataset has been used to show how DDharmonize_AbridgedAndComplete() works.
 }
-\keyword{datasets}
+\keyword{internal}

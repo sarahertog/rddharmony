@@ -16,4 +16,4 @@ series_isfull_df
 \description{
 This dataset has been used to show how dd_oag_agestart() and dd_series_isfull() work.
 }
-\keyword{datasets}
+\keyword{internal}

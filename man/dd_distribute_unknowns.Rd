@@ -15,8 +15,12 @@ A dataset without unknowns
 \description{
 Distribute Unknowns over age
 }
+\details{
+You can run \code{getAnywhere(dd_distribute_unknowns)} to see how the function is defined.
+}
 \examples{
+\dontrun{
 df <- vitals_std_valid_sample
 df <- dd_distribute_unknowns(df)
-
+}
 }

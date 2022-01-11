@@ -6,4 +6,5 @@
 #' \describe{
 #'   ...
 #' }
+#' @keywords internal
 "vitals_std_valid_sample2"

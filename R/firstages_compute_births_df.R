@@ -6,4 +6,5 @@
 #' \describe{
 #'   ...
 #' }
+#' @keywords internal
 "firstages_compute_births_df"

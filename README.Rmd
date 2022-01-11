@@ -10,13 +10,18 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+
 ```
 
-# rddharmony <a href='https://github.com/Shelmith-Kariuki/rddharmony'><img src='man/figures/logo.png' align="right" height="139" /></a> 
+# rddharmony <a href='https://github.com/Shelmith-Kariuki/rddharmony'><img src='man/figures/logo.png' align="right" width="100" /></a> 
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/Shelmith-Kariuki/rddharmony/workflows/R-CMD-check/badge.svg)](https://github.com/Shelmith-Kariuki/rddharmony/actions)
-  [![Codecov test coverage](https://codecov.io/gh/Shelmith-Kariuki/rddharmony/branch/master/graph/badge.svg)](https://codecov.io/gh/Shelmith-Kariuki/rddharmony?branch=master)
+[![pkgdown](https://github.com/Shelmith-Kariuki/rddharmony/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/Shelmith-Kariuki/rddharmony/actions)
+[![Codecov test coverage](https://codecov.io/gh/Shelmith-Kariuki/rddharmony/branch/master/graph/badge.svg)](https://codecov.io/gh/Shelmith-Kariuki/rddharmony?branch=master)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN status](https://www.r-pkg.org/badges/version/rddharmony)](https://CRAN.R-project.org/package=rddharmony)
 
 <!-- badges: end -->
 
@@ -56,27 +61,27 @@ The example below extracts Kenyan data, whose `locid == 404`. The output of the 
 
 ```{r example}
 library(rddharmony)
-# kenya_df <- DDharmonize_validate_BirthCounts(locid = 404,
-#                                               c(1950,2022),
-#                                               process = c("census", "vr"),
-#                                               return_unique_ref_period = TRUE, 
-#                                               DataSourceShortName = NULL,
-#                                               DataSourceYear = NULL,
-#                                               retainKeys = FALSE,
-#                                               server = "https://popdiv.dfs.un.org/DemoData/api/")
+kenya_df <- DDharmonize_validate_BirthCounts(locid = 404,
+                                              c(1950,2022),
+                                              process = c("census", "vr"),
+                                              return_unique_ref_period = TRUE,
+                                              DataSourceShortName = NULL,
+                                              DataSourceYear = NULL,
+                                              retainKeys = FALSE,
+                                              server = "https://popdiv.dfs.un.org/DemoData/api/")
 
 ```
 
 For a case where the user inserts an invalid location id, an informative error message is displayed.
 
 ```{r}
-# df <- DDharmonize_validate_BirthCounts(locid = 12345678,
-#                                               c(1950,2022),
-#                                               process = c("census", "vr"),
-#                                               return_unique_ref_period = TRUE, 
-#                                               DataSourceShortName = NULL,
-#                                               DataSourceYear = NULL,
-#                                               retainKeys = FALSE,
-#                                               server = "https://popdiv.dfs.un.org/DemoData/api/")
+df <- DDharmonize_validate_BirthCounts(locid = 12345678,
+                                              c(1950,2022),
+                                              process = c("census", "vr"),
+                                              return_unique_ref_period = TRUE,
+                                              DataSourceShortName = NULL,
+                                              DataSourceYear = NULL,
+                                              retainKeys = FALSE,
+                                              server = "https://popdiv.dfs.un.org/DemoData/api/")
 
 ```

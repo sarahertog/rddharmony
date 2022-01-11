@@ -16,4 +16,4 @@ oag_compute_df
 \description{
 This dataset has been used to show how dd_oag_compute_df() works.
 }
-\keyword{datasets}
+\keyword{internal}

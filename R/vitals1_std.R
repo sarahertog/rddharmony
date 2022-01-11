@@ -6,4 +6,5 @@
 #' \describe{
 #'   ...
 #' }
+#' @keywords internal
 "vitals1_std"

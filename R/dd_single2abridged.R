@@ -1,18 +1,22 @@
+#' @title
 #' dd_single2abridged
 #'
+#' @description
 #' Creates 5-year age groups based on single years of age data.
 #'
-#' @param data dataset with age series by single years of age
+#' @param data A dataset with age series by single years of age
 #'
 #' @import dplyr
 #' @importFrom magrittr %>%
 #'
-#' @return A dataset containing 5-year age groups generated from single years of age
+#' @return A dataset containing 5-year age groups generated from single years of age.
 
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' df <- dd_single2abridged(vitals_abr_cpl2)
+#' }
 
 dd_single2abridged  <- function(data){ #input should be a dataset with single year age labels
 

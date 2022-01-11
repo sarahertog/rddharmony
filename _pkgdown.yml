@@ -1,3 +1,5 @@
+url: https://shelmith-kariuki.github.io/rddharmony/
+
 destination: docs
 template:
   params:
@@ -18,10 +20,9 @@ reference:
     desc:
     contents:
           - '`check_locid`'
-          - '`DDextract_PopCounts`'
           - starts_with("DDharmonize_")
           - starts_with("dd_")
-          - starts_with("DDextract_Vital")
+          - starts_with("DDextract_")
           - '`std_age_function`'
 navbar:
   type: reverse
@@ -31,14 +32,26 @@ navbar:
       href: index.html
     - text: "Vignettes"
       menu:
+      - text: Harmonization Workflow
+        href: articles/Harmonization_Workflow.html
       - text: DDharmonize_validate_BirthCounts()
         href: articles/DDharmonize_validate_BirthCounts.html
       - text: DDharmonize_validate_DeathCounts()
         href: articles/DDharmonize_validate_DeathCounts.html
       - text: DDharmonize_validate_PopCounts()
         href: articles/DDharmonize_validate_PopCounts.html
-      - text: Harmonization Workflow
-        href: articles/Harmonization_Workflow.html
+      - text: Computing data values for the open age group needed to close a series
+        href: articles/dd_oag_compute.html
+      - text: Harmonizing five-year counts
+        href: articles/DDharmonize_5YearCounts.html
+      - text: Harmonizing one-year counts
+        href: articles/DDharmonize_1YearCounts.html
+      - text: Reconciling abridged and complete series
+        href: articles/DDharmonize_AbridgedAndComplete.html
+      - text: Validating totals over age
+        href: articles/dd_validate_totals_over_age.html
+      - text: Validating totals over sex
+        href: articles/dd_validate_totals_over_sex.html
 
     - text: "Functions"
       href: reference/index.html

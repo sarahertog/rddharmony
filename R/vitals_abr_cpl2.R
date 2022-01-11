@@ -6,4 +6,5 @@
 #' \describe{
 #'   ...
 #' }
+#' @keywords internal
 "vitals_abr_cpl2"

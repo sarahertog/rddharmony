@@ -6,4 +6,5 @@
 #' \describe{
 #'   ...
 #' }
+#' @keywords internal
 "dups"

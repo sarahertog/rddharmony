@@ -12,25 +12,29 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 URL: https://github.com/Shelmith-Kariuki/rddharmony
 BugReports: https://github.com/Shelmith-Kariuki/rddharmony/issues
-Imports: 
-    DemoTools,
+Depends: 
+    R (>= 4.0.0),
     DDSQLtools,
-    dplyr,
+    DemoTools,
+    dplyr
+Imports: 
     tidyr,
     magrittr,
     purrr,
     assertthat,
     zoo,
+    kableExtra,
     icons
 Suggests: 
     rmarkdown,
     knitr,
     testthat,
     covr
-Depends: 
-    R (>= 4.0.0)
 VignetteBuilder: knitr
 Remotes: 
     github::timriffe/DemoTools,
-    github::timriffe/DDSQLtools
+    github::timriffe/DDSQLtools,
+    github::mitchelloharawild/icons
+Config/Needs/website:
+    pkgdown
 Language: en-US

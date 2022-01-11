@@ -12,12 +12,17 @@ dd_fillzeros_births(data, abridged = TRUE)
 \item{abridged}{\code{TRUE/FALSE}}
 }
 \value{
-A dataset with zeros filled in for ages younger than 15 if there is no data reported
+A dataset with zeros filled in for ages younger than 15 if there is no data reported.
 }
 \description{
-Fill in zeros for mother ages younger than 15 if there is no data reported
+Fill in zeros for mother ages younger than 15 if there is no data reported.
+}
+\details{
+You can run \code{getAnywhere(dd_fillzeros_births)} to see the function definition.
 }
 \examples{
+\dontrun{
 df_abr <- dd_fillzeros_births(data = vitals_abr_cpl1_f0, abridged = TRUE)
 df_cpl <- dd_fillzeros_births(data = vitals_abr_cpl2_f0, abridged = FALSE)
+}
 }

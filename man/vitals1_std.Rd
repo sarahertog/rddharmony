@@ -16,4 +16,4 @@ vitals1_std
 \description{
 This dataset has been used to show how dd_births_abridged2single_1014() works.
 }
-\keyword{datasets}
+\keyword{internal}

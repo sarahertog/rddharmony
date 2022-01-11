@@ -1,0 +1,40 @@
+# Workflow derived from https://github.com/r-lib/actions/tree/master/examples
+# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+# Add Config/Needs/website: pkgdown to DESCRIPTION
+# Source: https://github.com/gaborcsardi/tune/commit/d41e2ece25ea2339e42337ec69cbe9e112a1ad1b#commitcomment-61524907
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    tags: ['*']
+  pull_request:
+    branches: [main, master]
+
+name: pkgdown
+
+jobs:
+  pkgdown:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      - uses: r-lib/actions/setup-r@v1
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@pak1
+        with:
+          needs: website
+
+      - name: Install package
+        run: R CMD INSTALL .
+
+      - name: Build site
+        if: github.event_name == 'pull_request'
+        run: |
+          Rscript -e 'pkgdown::build_site()'
+

@@ -16,4 +16,4 @@ firstages_compute_df
 \description{
 This dataset has been used to show how dd_firstages_compute() works.
 }
-\keyword{datasets}
+\keyword{internal}

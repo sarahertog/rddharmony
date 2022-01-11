@@ -16,4 +16,4 @@ vitals_abr_cpl2
 \description{
 This dataset has been used to show how dd_single2abridged() works.
 }
-\keyword{datasets}
+\keyword{internal}

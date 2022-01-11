@@ -16,4 +16,4 @@ latest_source_year_df
 \description{
 This dataset has been used to show how dd_latest_source_year() works.
 }
-\keyword{datasets}
+\keyword{internal}

@@ -4,4 +4,5 @@
 #' \describe{
 #'   ...
 #' }
+#' @keywords internal
 "vitals5_std"

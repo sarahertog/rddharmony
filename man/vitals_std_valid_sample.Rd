@@ -16,4 +16,4 @@ vitals_std_valid_sample
 \description{
 This dataset has been used to show how dd_distribute_unknowns() works.
 }
-\keyword{datasets}
+\keyword{internal}

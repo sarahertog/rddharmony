@@ -1,17 +1,25 @@
+#' @title
 #' DDharmonize_Pop1
 #'
-#' This wrapper takes population1 indicators from DemoData and Standardizes/harmonizes by age group
+#' @description
+#' This wrapper takes population1 indicators from DemoData and Standardizes/harmonizes them.
 #'
-#' @param indata The data to be harmonised
+#' @details
+#' See the \href{https://shelmith-kariuki.github.io/rddharmony/articles/DDharmonize_1YearCounts.html}{"Harmonizing one-year counts" vignette} for more details about this function.
+#'
+#' @param indata The data to be harmonised.
 #'
 #' @import dplyr
 #' @importFrom magrittr %>%
 #'
-#' @return  A data frame that contains data by single year of age up to the open age group
+#' @return A data frame that contains harmonized single year of age counts and closed by an open age group.
 #' @export
 #'
 #' @examples
-#' df <- data.frame()
+#' \dontrun{
+#' df <- pop1_df
+#' df <- DDharmonize_Pop1(df)
+#'}
 DDharmonize_Pop1 <- function (indata) {
 
     ##1. Create an object containing population counts by single year of age
@@ -137,7 +145,6 @@ DDharmonize_Pop1 <- function (indata) {
         oag_check <- paste0(oag_start,"+") %in% df$AgeLabel
 
         ##17. drop records for open age groups that do not close the series
-        ##21. drop records for open age groups that do not close the series
         ## Edited the part below because of the error below, in cases where we only have the Total and Unknown:
         ## Error : Problem with `filter()` input `..1`.
         ## ℹ Input `..1` is `!(AgeStart > 0 & AgeSpan == -1 & AgeStart != oag_start)`.
